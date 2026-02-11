@@ -22,24 +22,12 @@ Follow these steps to deploy your AI Sales Agent online using **Render** (Recomm
    git push -u origin main
    ```
 
-## 3. Deploy on Render (Ultra-Fast Blueprint Method)
-1. Go to **[Render Blueprints](https://dashboard.render.com/blueprints)**.
-2. Click **New Blueprint Instance**.
-3. Connect your GitHub repository (`ai-sales-agent`).
-4. Render will automatically detect the **render.yaml** I created!
-5. It will ask you for your environment variables (API keys, etc.) directly in the UI.
-6. Click **Deploy**.
-
-## Alternative: Manual Web Service
-If you prefer manual setup:
-1. Click **New +** and select **Web Service**.
-3. Connect your GitHub repository.
-4. **Configuration Settings**:
-   - **Name**: `ai-sales-agent`
-   - **Environment**: `Python 3`
-   - **Build Command**: `pip install -r requirements.txt`
-   - **Start Command**: `gunicorn --worker-class eventlet -w 1 src.app:app`
-5. **Environment Variables**: Click **Advanced** and add your `.env` variables:
+## 4. Deploy on Railway (Recommended)
+1. Log in to [Railway.app](https://railway.app/).
+2. Click **+ New Project** and select **Deploy from GitHub repo**.
+3. Select your **`ai-sales-agent`** repository.
+4. Click **Deploy Now**.
+5. Once the project is created, go to the **Variables** tab and add:
    - `GEMINI_API_KEY`: Your key
    - `SENDER_NAME`: Your name
    - `SENDER_EMAIL`: Your email
@@ -48,7 +36,11 @@ If you prefer manual setup:
    - `SMTP_USERNAME`: Your email
    - `SMTP_PASSWORD`: Your App Password
    - `MEETING_LINK`: Your booking link
-6. Click **Create Web Service**.
+6. Railway will automatically detect the `Procfile` and redeploy.
+7. Go to the **Settings** tab, find the **Networking** section, and click **Generate Domain** to get your public URL.
+
+## 5. Alternative: Deploy on Render
+(Instructions for Render are still available if needed in the previous version of this guide).
 
 ## 4. Verification
 - Once the build is complete, Render will provide a URL (e.g., `https://ai-sales-agent.onrender.com`).
