@@ -22,9 +22,17 @@ Follow these steps to deploy your AI Sales Agent online using **Render** (Recomm
    git push -u origin main
    ```
 
-## 3. Deploy on Render
-1. Log in to [Render](https://dashboard.render.com/).
-2. Click **New +** and select **Web Service**.
+## 3. Deploy on Render (Ultra-Fast Blueprint Method)
+1. Go to **[Render Blueprints](https://dashboard.render.com/blueprints)**.
+2. Click **New Blueprint Instance**.
+3. Connect your GitHub repository (`ai-sales-agent`).
+4. Render will automatically detect the **render.yaml** I created!
+5. It will ask you for your environment variables (API keys, etc.) directly in the UI.
+6. Click **Deploy**.
+
+## Alternative: Manual Web Service
+If you prefer manual setup:
+1. Click **New +** and select **Web Service**.
 3. Connect your GitHub repository.
 4. **Configuration Settings**:
    - **Name**: `ai-sales-agent`
