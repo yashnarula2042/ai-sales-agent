@@ -1,9 +1,16 @@
+import eventlet
+eventlet.monkey_patch()
+
 from flask import Flask, render_template, request, jsonify, send_from_directory
 from flask_cors import CORS
 from .lead_manager import LeadManager, LeadStatus, get_session, Lead
 from .main import SalesAgentOrchestrator
 import os
 import threading
+
+# Ensure data directory exists for database and uploads
+if not os.path.exists('data'):
+    os.makedirs('data')
 
 app = Flask(__name__, static_folder='static', template_folder='static')
 CORS(app)
@@ -174,9 +181,6 @@ def test_email():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    if not os.path.exists('data'):
-        os.makedirs('data')
-    
     # Use the port assigned by the cloud provider or default to 5000
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port, debug=True)
