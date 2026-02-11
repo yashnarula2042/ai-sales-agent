@@ -1,0 +1,11 @@
+flask
+flask-cors
+pandas
+google-genai
+python-dotenv
+requests
+psycopg2-binary
+chardet
+sqlalchemy
+gunicorn
+eventlet

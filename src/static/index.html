@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Sales Agent | Soft UI Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #cb0c9f;
+            --primary-gradient: linear-gradient(310deg, #7928ca 0%, #ff0080 100%);
+            --secondary: #627594;
+            --info-gradient: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);
+            --success-gradient: linear-gradient(310deg, #17ad37 0%, #98ec2d 100%);
+            --error-gradient: linear-gradient(310deg, #ea0606 0%, #ff667c 100%);
+            --warning-gradient: linear-gradient(310deg, #f53939 0%, #fbcf33 100%);
+            
+            --bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #344767;
+            --text-muted: #67748e;
+            --border-radius: 1rem;
+            --soft-shadow: 0 20px 27px 0 rgba(0, 0, 0, 0.05);
+            --border-color: #e9ecef;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background: white;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding: 1.5rem;
+            border-right: 0;
+            box-shadow: var(--soft-shadow);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1rem 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .brand i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .brand span {
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0.75rem 1rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .nav-link.active {
+            background: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            color: var(--text-main);
+        }
+
+        .nav-link.active i {
+            background: var(--primary-gradient);
+            color: white;
+        }
+
+        .nav-link i {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+            font-size: 0.8rem;
+            color: var(--text-main);
+            transition: all 0.2s ease;
+        }
+
+        .nav-section-title {
+            padding: 1rem 1rem 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 250px;
+            flex: 1;
+            padding: 2rem;
+            max-width: calc(100% - 250px);
+        }
+
+        .top-navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumb {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .breadcrumb span {
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .status-pill {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            box-shadow: var(--soft-shadow);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #adb5bd;
+        }
+
+        .status-dot.active {
+            background: #2dce89;
+            box-shadow: 0 0 10px rgba(45, 206, 137, 0.5);
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--soft-shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-info h3 {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .stat-info p {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .stat-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+        }
+
+        .icon-primary { background: var(--primary-gradient); }
+        .icon-info { background: var(--info-gradient); }
+        .icon-success { background: var(--success-gradient); }
+        .icon-error { background: var(--error-gradient); }
+
+        /* Grids */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--soft-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-header h2 {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        /* Form Controls */
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.625rem 0.75rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border-color);
+            font-size: 0.875rem;
+            transition: border-color 0.2s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .btn {
+            padding: 0.625rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: white;
+            box-shadow: 0 4px 7px -1px rgba(0, 0, 0, 0.11), 0 2px 4px -1px rgba(0, 0, 0, 0.07);
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.02);
+            box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.09), 0 2px 3px -1px rgba(0, 0, 0, 0.07);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-sm {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.65rem;
+            width: auto;
+        }
+
+        /* Table */
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table th {
+            text-align: left;
+            padding: 1rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            opacity: 0.7;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .table td {
+            padding: 1rem;
+            font-size: 0.8rem;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .status-badge {
+            padding: 0.35rem 0.75rem;
+            border-radius: 0.5rem;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .badge-pending { background: #e9ecef; color: #67748e; }
+        .badge-sent { background: #dcfce7; color: #15803d; }
+        .badge-failed { background: #fee2e2; color: #b91c1c; }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(4px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal {
+            background: white;
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--soft-shadow);
+        }
+
+        .modal-header {
+            padding: 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            background: #f8f9fa;
+        }
+
+        .modal-footer {
+            padding: 1rem;
+            border-top: 1px solid var(--border-color);
+            text-align: right;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade {
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .upload-zone {
+            border: 2px dashed var(--border-color);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 1rem;
+        }
+
+        .upload-zone:hover {
+            border-color: var(--primary);
+            background: #fcfcfc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="brand">
+            <i class="fas fa-rocket"></i>
+            <span>SOFT UI AGENT</span>
+        </div>
+
+        <nav>
+            <a href="#" class="nav-link active">
+                <i class="fas fa-tv"></i> Dashboard
+            </a>
+            
+            <div class="nav-section-title">Management</div>
+            <a href="#quick-add" class="nav-link">
+                <i class="fas fa-user-plus"></i> Quick Add
+            </a>
+            <a href="#import" class="nav-link">
+                <i class="fas fa-file-import"></i> CSV Import
+            </a>
+            
+            <div class="nav-section-title">Tools</div>
+            <a href="#test-email" class="nav-link">
+                <i class="fas fa-paper-plane"></i> Test Email
+            </a>
+            <a href="#" class="nav-link" onclick="resetLeads()">
+                <i class="fas fa-undo"></i> Reset Status
+            </a>
+            <a href="#" class="nav-link" style="color: #ea0606;" onclick="clearData()">
+                <i class="fas fa-trash"></i> Clear Data
+            </a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="top-navbar">
+            <div class="breadcrumb">
+                Pages / <span>Dashboard</span>
+                <h2 style="font-weight: 800; font-size: 1.25rem; margin-top: 5px;">Dashboard</h2>
+            </div>
+            <div class="status-pill">
+                <div class="status-dot active" id="system-dot"></div>
+                <span id="connection-status">System Live</span>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-info">
+                    <h3>Total Leads</h3>
+                    <p id="stat-total">0</p>
+                </div>
+                <div class="stat-icon icon-primary">
+                    <i class="fas fa-users"></i>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-info">
+                    <h3>Emails Sent</h3>
+                    <p id="stat-sent">0</p>
+                </div>
+                <div class="stat-icon icon-success">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-info">
+                    <h3>Pending</h3>
+                    <p id="stat-pending">0</p>
+                </div>
+                <div class="stat-icon icon-info">
+                    <i class="fas fa-clock"></i>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-info">
+                    <h3>Failed</h3>
+                    <p id="stat-failed">0</p>
+                </div>
+                <div class="stat-icon icon-error">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="left-col">
+                <div class="card animate-fade">
+                    <div class="card-header">
+                        <h2>Lead Pipeline</h2>
+                        <div style="display: flex; gap: 8px;">
+                            <button class="btn btn-primary btn-sm" onclick="runAutomation()" id="runBtn" style="width: auto;">Start Automation</button>
+                            <div id="activeControls" style="display: none; gap: 8px;">
+                                <button class="btn btn-outline btn-sm" onclick="togglePause()" id="pauseBtn" style="width: auto;">Pause</button>
+                                <button class="btn btn-sm" style="background: #f53939; color: white; width: auto;" onclick="stopAutomation()" id="stopBtn">Stop</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive" style="max-height: 600px;">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Lead Details</th>
+                                    <th>Company</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="lead-body">
+                                <!-- Leads will be injected here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-col">
+                <div class="card animate-fade" id="quick-add">
+                    <h2>Quick Add Lead</h2>
+                    <div class="form-group">
+                        <label>Contact Name</label>
+                        <input type="text" id="manual-name" class="form-control" placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label>Business Name</label>
+                        <input type="text" id="manual-company" class="form-control" placeholder="Acme Inc">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="manual-email" class="form-control" placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Website</label>
+                        <input type="text" id="manual-website" class="form-control" placeholder="https://example.com">
+                    </div>
+                    <button class="btn btn-primary" onclick="addLeadManual()" id="addBtn">
+                        <i class="fas fa-plus"></i> Add to Pipeline
+                    </button>
+                </div>
+
+                <div class="card animate-fade" id="import">
+                    <h2>CSV Import</h2>
+                    <div class="upload-zone" onclick="document.getElementById('file-input').click()">
+                        <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                        <p style="font-weight: 700; font-size: 0.9rem;">Drop CSV here</p>
+                        <p style="font-size: 0.75rem; color: var(--text-muted)">Must have 'email' column</p>
+                        <input type="file" id="file-input" accept=".csv" style="display: none;">
+                    </div>
+                    <a href="/api/sample-csv" style="display: block; text-align: center; font-size: 0.75rem; color: var(--primary); text-decoration: none; font-weight: 600;">
+                        Download Template CSV
+                    </a>
+                </div>
+
+                <div class="card animate-fade" id="test-email">
+                    <h2>Send Test Email</h2>
+                    <div class="form-group">
+                        <label>Target Email</label>
+                        <input type="email" id="test-email-target" class="form-control" placeholder="your@email.com">
+                    </div>
+                    <button class="btn btn-outline" onclick="sendTestEmail()" id="testBtn">
+                        <i class="fas fa-flask"></i> Send Test
+                    </button>
+                    <p style="font-size: 0.65rem; color: var(--text-muted); margin-top: 1rem; text-align: center;">
+                        Verifies your SMTP and AI template instantly.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Email Preview Modal -->
+    <div id="emailModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2>Email Preview</h2>
+                <button class="close-modal" onclick="closeModal()" style="font-size: 1.2rem; border: none; background: transparent; cursor: pointer;">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-content">
+                <!-- Content injected here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary btn-sm" onclick="closeModal()">Got it</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let isAutomationRunning = false;
+
+        async function fetchStats() {
+            try {
+                const res = await fetch('/api/stats');
+                const data = await res.json();
+                document.getElementById('stat-total').innerText = data.total;
+                document.getElementById('stat-sent').innerText = data.sent;
+                document.getElementById('stat-pending').innerText = data.pending;
+                document.getElementById('stat-failed').innerText = data.failed;
+            } catch (err) { console.error('Stats fetch error:', err); }
+        }
+
+        async function fetchLeads() {
+            try {
+                const res = await fetch('/api/leads');
+                const data = await res.json();
+                const body = document.getElementById('lead-body');
+                body.innerHTML = '';
+                data.forEach(lead => {
+                    const row = document.createElement('tr');
+                    
+                    const badgeClass = lead.status === 'sent' ? 'badge-sent' : (lead.status === 'failed' ? 'badge-failed' : 'badge-pending');
+                    let statusHtml = `<span class="status-badge ${badgeClass}">${lead.status}</span>`;
+                    
+                    if (lead.status === 'failed' && lead.error) {
+                        statusHtml += `<div style="font-size: 0.6rem; color: #ea0606; margin-top: 5px;">${lead.error}</div>`;
+                    }
+
+                    let actionsHtml = '';
+                    if (lead.email_content) {
+                        actionsHtml = `<button class="btn btn-outline btn-sm" onclick='openModal(${JSON.stringify(lead.email_content)})'><i class="fas fa-eye"></i> View</button>`;
+                    }
+
+                    row.innerHTML = `
+                        <td>
+                            <div style="font-weight: 700;">${lead.name}</div>
+                            <div style="font-size: 0.7rem; color: var(--text-muted);">${lead.email}</div>
+                        </td>
+                        <td>
+                            <div style="font-weight: 600;">${lead.company}</div>
+                            <div style="font-size: 0.7rem; color: var(--primary);">${lead.website || ''}</div>
+                        </td>
+                        <td>${statusHtml}</td>
+                        <td>${actionsHtml}</td>
+                    `;
+                    body.appendChild(row);
+                });
+            } catch (err) { console.error('Leads fetch error:', err); }
+        }
+
+        document.getElementById('file-input').addEventListener('change', async (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            const res = await fetch('/api/upload', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (res.ok) {
+                const data = await res.json();
+                alert(data.message || 'Leads imported successfully!');
+                fetchLeads();
+                fetchStats();
+            } else {
+                const errData = await res.json();
+                alert('Error: ' + (errData.error || 'Unknown upload error'));
+            }
+        });
+
+        async function addLeadManual() {
+            const name = document.getElementById('manual-name').value;
+            const email = document.getElementById('manual-email').value;
+            const company = document.getElementById('manual-company').value;
+            const website = document.getElementById('manual-website').value;
+
+            if (!email) {
+                alert('Email is required!');
+                return;
+            }
+
+            const btn = document.getElementById('addBtn');
+            btn.disabled = true;
+            btn.innerText = 'Adding...';
+
+            const res = await fetch('/api/leads/add', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, company, website })
+            });
+
+            const data = await res.json();
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fas fa-plus"></i> Add to Pipeline';
+
+            if (res.ok) {
+                document.getElementById('manual-name').value = '';
+                document.getElementById('manual-email').value = '';
+                document.getElementById('manual-company').value = '';
+                document.getElementById('manual-website').value = '';
+                fetchLeads();
+                fetchStats();
+            } else {
+                alert('Error: ' + data.error);
+            }
+        }
+
+        function openModal(content) {
+            document.getElementById('modal-content').innerText = content;
+            document.getElementById('emailModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(event) {
+            if (event && event.target.id !== 'emailModal' && !event.target.classList.contains('close-modal') && event.target.tagName !== 'BUTTON') {
+                return;
+            }
+            document.getElementById('emailModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        async function runAutomation() {
+            const runBtn = document.getElementById('runBtn');
+            runBtn.disabled = true;
+            runBtn.innerText = 'Initializing...';
+
+            try {
+                const res = await fetch('/api/run', { method: 'POST' });
+                const data = await res.json();
+                if (!res.ok) alert(data.error || data.message);
+                checkStatus();
+            } catch (err) { alert('Error starting automation'); }
+        }
+
+        async function checkStatus() {
+            try {
+                const res = await fetch('/api/status');
+                const data = await res.json();
+
+                const runBtn = document.getElementById('runBtn');
+                const pauseBtn = document.getElementById('pauseBtn');
+                const activeControls = document.getElementById('activeControls');
+
+                isAutomationRunning = data.is_running;
+                const isPaused = data.is_paused;
+
+                if (isAutomationRunning) {
+                    runBtn.style.display = 'none';
+                    activeControls.style.display = 'flex';
+                    pauseBtn.innerHTML = isPaused ? '<i class="fas fa-play"></i> Resume' : '<i class="fas fa-pause"></i> Pause';
+                } else {
+                    runBtn.style.display = 'block';
+                    runBtn.disabled = false;
+                    runBtn.innerHTML = '<i class="fas fa-play"></i> Start Automation';
+                    activeControls.style.display = 'none';
+                }
+            } catch (err) { console.error('Status check error:', err); }
+        }
+
+        async function sendTestEmail() {
+            const email = document.getElementById('test-email-target').value;
+            if (!email) {
+                alert('Please enter an email address!');
+                return;
+            }
+
+            const btn = document.getElementById('testBtn');
+            const originalText = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerText = 'Sending...';
+
+            try {
+                const res = await fetch('/api/test-email', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+
+                const data = await res.json();
+                if (res.ok) alert('Test email sent successfully!');
+                else alert('Error: ' + data.error);
+            } catch (err) { alert('Connection error'); }
+            finally {
+                btn.disabled = false;
+                btn.innerHTML = originalText;
+            }
+        }
+
+        async function togglePause() {
+            const pauseBtn = document.getElementById('pauseBtn');
+            const isCurrentlyPaused = pauseBtn.innerText.includes('Resume');
+            const endpoint = isCurrentlyPaused ? '/api/resume' : '/api/pause';
+
+            await fetch(endpoint, { method: 'POST' });
+            checkStatus();
+        }
+
+        async function stopAutomation() {
+            const res = await fetch('/api/stop', { method: 'POST' });
+            const data = await res.json();
+            checkStatus();
+            alert(data.message);
+        }
+
+        async function resetLeads() {
+            if (confirm('Reset all SENT and FAILED leads to PENDING?')) {
+                const res = await fetch('/api/reset', { method: 'POST' });
+                const data = await res.json();
+                fetchLeads();
+                fetchStats();
+            }
+        }
+
+        async function clearData() {
+            if (!confirm('Permanently clear ALL leads?')) return;
+            const res = await fetch('/api/clear', { method: 'POST' });
+            if (res.ok) {
+                fetchLeads();
+                fetchStats();
+            }
+        }
+
+        setInterval(() => {
+            fetchLeads();
+            fetchStats();
+            checkStatus();
+        }, 5000);
+
+        // Initial load
+        fetchStats();
+        fetchLeads();
+        checkStatus();
+    </script>
+</body>
+
+</html>

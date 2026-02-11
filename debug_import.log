@@ -1,0 +1,422 @@
+2026-02-11 22:49:10,245 - src.lead_manager - INFO - Detected encoding: ascii
+2026-02-11 22:49:10,252 - src.lead_manager - INFO - Successfully parsed CSV with separator: ','
+2026-02-11 22:49:10,252 - src.lead_manager - INFO - Columns detected: ['name', 'email', 'company', 'website']
+2026-02-11 22:49:10,252 - src.lead_manager - INFO - Processing 1 rows from CSV...
+2026-02-11 22:49:10,253 - src.lead_manager - INFO - Sample row 0: {'name': 'John Doe', 'email': 'yashnarula21@gmail.com', 'company': 'Example Corp', 'website': 'https://example.com'}
+2026-02-11 22:49:10,257 - src.lead_manager - WARNING - Row 0: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('yashnarula21@gmail.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 22:49:10,258 - src.lead_manager - INFO - Import Result: 0 new leads added. 0 duplicates skipped. 1 invalid rows skipped.
+2026-02-11 22:54:19,304 - src.lead_manager - INFO - All leads cleared from the database.
+2026-02-11 22:59:54,141 - src.lead_manager - INFO - Detected encoding: ascii
+2026-02-11 22:59:54,154 - src.lead_manager - INFO - Successfully parsed CSV with separator: ','
+2026-02-11 22:59:54,154 - src.lead_manager - INFO - Columns detected: ['name', 'email', 'company', 'website']
+2026-02-11 22:59:54,154 - src.lead_manager - INFO - Processing 1 rows from CSV...
+2026-02-11 22:59:54,155 - src.lead_manager - INFO - Sample row 0: {'name': 'John Doe', 'email': 'yashnarula21@gmail.com', 'company': 'Example Corp', 'website': 'https://example.com'}
+2026-02-11 22:59:54,162 - src.lead_manager - WARNING - Row 0: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('yashnarula21@gmail.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 22:59:54,162 - src.lead_manager - INFO - Import Result: 0 new leads added. 0 duplicates skipped. 1 invalid rows skipped.
+2026-02-11 23:00:01,353 - src.lead_manager - INFO - Detected encoding: ascii
+2026-02-11 23:00:01,358 - src.lead_manager - INFO - Successfully parsed CSV with separator: ','
+2026-02-11 23:00:01,359 - src.lead_manager - INFO - Columns detected: ['name', 'rating', 'reviews', 'phone', 'website', 'email', 'google maps url']
+2026-02-11 23:00:01,359 - src.lead_manager - INFO - Processing 100 rows from CSV...
+2026-02-11 23:00:01,359 - src.lead_manager - INFO - Sample row 0: {'Name': 'Foreign Grill', 'Rating': nan, 'Reviews': nan, 'Phone': '+1 832-977-4433', 'Website': 'https://www.foreigngrilltx.com/', 'Email': 'ef5d9bbac3354b759bfd7a23c3313b3f@o244637.ingest.us.sentry.io, foreigngrilltx@gmail.com', 'Google Maps URL': 'https://www.google.com/maps/place/Foreign+Grill/data=!4m7!3m6!1s0x8640bf03e68a448d:0xbcc164a530a7cf48!8m2!3d29.7661543!4d-95.3645358!16s%2Fg%2F11rjjk7_n6!19sChIJjUSK5gO_QIYRSM-nMKVkwbw?authuser=0&hl=en&rclk=1'}
+2026-02-11 23:00:01,361 - src.lead_manager - WARNING - Row 0: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('ef5d9bbac3354b759bfd7a23c3313b3f@o244637.ingest.us.sentry.io, foreigngrilltx@gmail.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,362 - src.lead_manager - WARNING - Row 2: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('user@example.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,363 - src.lead_manager - WARNING - Row 3: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('accessibility@joeyrestaurants.com, juptown@joeyrestaurants.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,364 - src.lead_manager - WARNING - Row 4: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('ef5d9bbac3354b759bfd7a23c3313b3f@o244637.ingest.us.sentry.io, katie.gilhooleys@gmail.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,365 - src.lead_manager - WARNING - Row 5: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('yoranchsteakhouse.sales@gmail.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,366 - src.lead_manager - WARNING - Row 7: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('info@travelerstable.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,367 - src.lead_manager - WARNING - Row 9: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('9a65e97ebe8141fca0c4fd686f70996b@sentry.wixpress.com, 8eb368c655b84e029ed79ad7a5c1718e@sentry.wixpress.com, e0b4d631da7b4200828051f7f9c783e3@sentry-next.wixpress.com, 605a7baede844d278b89dc95ae0a9123@sentry-next.wixpress.com, 8c4075d5481d476e945486754f783364@sentry.io', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,369 - src.lead_manager - WARNING - Row 10: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('scholzgartenevents@gmail.com, SCHOLZGARTENEVENTS@GMAIL.COM', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,370 - src.lead_manager - WARNING - Row 12: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('press@anotherbrokenegg.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,371 - src.lead_manager - WARNING - Row 13: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('press@anotherbrokenegg.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,371 - src.lead_manager - WARNING - Row 14: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('13e49d785d8d4f828038b6136f3b48ba@sentry.io, corkscrewbbq@corkscrewbbq.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,372 - src.lead_manager - WARNING - Row 15: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('info@davantiristorante.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,374 - src.lead_manager - WARNING - Row 23: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('peacebakerydeli1@gmail.com, email@example.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,375 - src.lead_manager - WARNING - Row 24: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('hello@faregroundaustin.com, user@domain.com, Jabs-Logo2025-Badge@2x.png', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,376 - src.lead_manager - WARNING - Row 26: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('houstonevents@trulucks.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,377 - src.lead_manager - WARNING - Row 27: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('lonesomedoveaustin-events@cheftimlove.com, events@cheftimlove.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,378 - src.lead_manager - WARNING - Row 28: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('egnipont@gmail.com, love@p-thai.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,379 - src.lead_manager - WARNING - Row 29: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('devivobros.eatery@gmail.com, email@example.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,380 - src.lead_manager - WARNING - Row 30: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('user@domain.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,381 - src.lead_manager - WARNING - Row 31: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('user@domain.com, catering@enchiladasole.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,383 - src.lead_manager - WARNING - Row 33: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('hello@adolphus.com, cityhallinfo@cityhallbistro.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,384 - src.lead_manager - WARNING - Row 34: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('info@al-baghdady.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,385 - src.lead_manager - WARNING - Row 38: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('esparzastexmex@verizon.net', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,386 - src.lead_manager - WARNING - Row 39: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('example@texasdebrazil.com, about-offwhite-bg@2x.png', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,387 - src.lead_manager - WARNING - Row 41: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('lovethailicious@gmail.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,388 - src.lead_manager - WARNING - Row 43: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('Ebisuaustin@Gmail.com, email@example.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,389 - src.lead_manager - WARNING - Row 45: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('stishgart@pluckers.net', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,390 - src.lead_manager - WARNING - Row 46: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('info@theriversedgesa.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,391 - src.lead_manager - WARNING - Row 47: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('user@domain.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,393 - src.lead_manager - WARNING - Row 51: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('bayleafaustin@gmail.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,394 - src.lead_manager - WARNING - Row 53: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('info@burgerbarcafe.com, ef5d9bbac3354b759bfd7a23c3313b3f@o244637.ingest.us.sentry.io', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,396 - src.lead_manager - WARNING - Row 58: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('black9@qq.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,397 - src.lead_manager - WARNING - Row 59: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('topeurasia@gmail.com, email@example.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,398 - src.lead_manager - WARNING - Row 60: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('e081c35a018348d18e09ed427bf39b65@o462166.ingest.sentry.io', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,399 - src.lead_manager - WARNING - Row 62: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('Shrifoods4u@gmail.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,400 - src.lead_manager - WARNING - Row 63: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('8eb368c655b84e029ed79ad7a5c1718e@sentry.wixpress.com, 605a7baede844d278b89dc95ae0a9123@sentry-next.wixpress.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,401 - src.lead_manager - WARNING - Row 65: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('info@blackstonetexas.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,403 - src.lead_manager - WARNING - Row 68: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('littlelillysushi@gmail.com, user@domain.com, littlelillysushi2@gmail.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,405 - src.lead_manager - WARNING - Row 74: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('info@billybobstexas.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,407 - src.lead_manager - WARNING - Row 75: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('user@domain.com, GSC@leonspringsbbq.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,408 - src.lead_manager - WARNING - Row 79: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('catering@crackerbarrel.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,409 - src.lead_manager - WARNING - Row 80: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('contact@sansoxygen.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,410 - src.lead_manager - WARNING - Row 82: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('5530cf44-4c70-477e-adab-9a704375bc51_news@2x.png, 6d64f16d-4a07-40c4-8bcd-325dce0ab7c9_caniac-club@2x.png, 213f8bb2-8d06-464f-8599-a37b6d5e8c54_contact-us@2x.png', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,411 - src.lead_manager - WARNING - Row 85: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('9a65e97ebe8141fca0c4fd686f70996b@sentry.wixpress.com, c5095236fd2e4b8fae9ed6d73cdd81a3@sentry.wixpress.com, 7025fe2ce4ed466a9751d9607bc63a44@sentry.w ... (105 characters truncated) ... sentry-next.wixpress.com, 8c4075d5481d476e945486754f783364@sentry.io, himalayakosheli@gmail.com, 0c52cb89aa4d4154857a1584b6701db6@sentry.wixpress.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,413 - src.lead_manager - WARNING - Row 93: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('user@domain.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,413 - src.lead_manager - WARNING - Row 94: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('user@domain.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,415 - src.lead_manager - WARNING - Row 99: Skipping due to error: (sqlite3.OperationalError) no such column: leads.error_message
+[SQL: SELECT leads.id AS leads_id, leads.name AS leads_name, leads.email AS leads_email, leads.company AS leads_company, leads.website AS leads_website, leads.status AS leads_status, leads.personalized_email AS leads_personalized_email, leads.error_message AS leads_error_message, leads.created_at AS leads_created_at, leads.sent_at AS leads_sent_at 
+FROM leads 
+WHERE leads.email = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('Mike.troupe@ecolab.com, Dave.Stockton@brinker.com, C00520@chilis.com, Jesse.Bergen@brinker.com, Scott.Amerault@brinker.com', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-02-11 23:00:01,415 - src.lead_manager - INFO - Import Result: 0 new leads added. 0 duplicates skipped. 100 invalid rows skipped.
+2026-02-11 23:03:34,262 - src.lead_manager - INFO - Detected encoding: ascii
+2026-02-11 23:03:34,267 - src.lead_manager - INFO - Successfully parsed CSV with separator: ','
+2026-02-11 23:03:34,267 - src.lead_manager - INFO - Columns detected: ['name', 'email', 'company', 'website']
+2026-02-11 23:03:34,267 - src.lead_manager - INFO - Processing 1 rows from CSV...
+2026-02-11 23:03:34,267 - src.lead_manager - INFO - Sample row 0: {'name': 'John Doe', 'email': 'yashnarula21@gmail.com', 'company': 'Example Corp', 'website': 'https://example.com'}
+2026-02-11 23:03:34,279 - src.lead_manager - INFO - Import Result: 1 new leads added. 0 duplicates skipped. 0 invalid rows skipped.
+2026-02-11 23:04:30,098 - src.lead_manager - INFO - All leads cleared from the database.
+2026-02-11 23:04:35,025 - src.lead_manager - INFO - Detected encoding: ascii
+2026-02-11 23:04:35,028 - src.lead_manager - INFO - Successfully parsed CSV with separator: ','
+2026-02-11 23:04:35,028 - src.lead_manager - INFO - Columns detected: ['name', 'email', 'company', 'website']
+2026-02-11 23:04:35,028 - src.lead_manager - INFO - Processing 1 rows from CSV...
+2026-02-11 23:04:35,028 - src.lead_manager - INFO - Sample row 0: {'name': 'John Doe', 'email': 'yashnarula2020@gmail.com', 'company': 'Example Corp', 'website': 'https://example.com'}
+2026-02-11 23:04:35,035 - src.lead_manager - INFO - Import Result: 1 new leads added. 0 duplicates skipped. 0 invalid rows skipped.
+2026-02-11 23:10:00,010 - src.lead_manager - INFO - All leads cleared from the database.
+2026-02-11 23:10:05,539 - src.lead_manager - INFO - Detected encoding: ascii
+2026-02-11 23:10:05,550 - src.lead_manager - INFO - Successfully parsed CSV with separator: ','
+2026-02-11 23:10:05,550 - src.lead_manager - INFO - Columns detected: ['name', 'email', 'company', 'website']
+2026-02-11 23:10:05,550 - src.lead_manager - INFO - Processing 1 rows from CSV...
+2026-02-11 23:10:05,550 - src.lead_manager - INFO - Sample row 0: {'name': 'John Doe', 'email': 'yashnarula2020@gmail.com', 'company': 'Example Corp', 'website': 'https://example.com'}
+2026-02-11 23:10:05,563 - src.lead_manager - INFO - Import Result: 1 new leads added. 0 duplicates skipped. 0 invalid rows skipped.
+2026-02-11 23:12:06,162 - src.lead_manager - INFO - Reset 1 leads to pending.
+2026-02-11 23:13:33,357 - src.lead_manager - INFO - Reset 1 leads to pending.
+2026-02-11 23:13:46,218 - src.lead_manager - INFO - Reset 0 leads to pending.
+2026-02-11 23:14:50,400 - src.lead_manager - INFO - Reset 1 leads to pending.
+2026-02-11 23:14:55,002 - src.lead_manager - INFO - Detected encoding: ascii
+2026-02-11 23:14:55,009 - src.lead_manager - INFO - Successfully parsed CSV with separator: ','
+2026-02-11 23:14:55,009 - src.lead_manager - INFO - Columns detected: ['name', 'email', 'company', 'website']
+2026-02-11 23:14:55,009 - src.lead_manager - INFO - Processing 2 rows from CSV...
+2026-02-11 23:14:55,009 - src.lead_manager - INFO - Sample row 0: {'name': 'John Doe', 'email': 'yashnarula2020@gmail.com', 'company': 'Example Corp', 'website': 'https://example.com'}
+2026-02-11 23:14:55,012 - src.lead_manager - WARNING - Row 1: Invalid email format 'narula.mukul.gmail.com'
+2026-02-11 23:14:55,012 - src.lead_manager - INFO - Import Result: 0 new leads added. 1 duplicates skipped. 1 invalid rows skipped.
+2026-02-11 23:15:01,322 - src.lead_manager - INFO - All leads cleared from the database.
+2026-02-11 23:15:43,080 - src.lead_manager - INFO - Detected encoding: ascii
+2026-02-11 23:15:43,082 - src.lead_manager - INFO - Successfully parsed CSV with separator: ','
+2026-02-11 23:15:43,082 - src.lead_manager - INFO - Columns detected: ['name', 'email', 'company', 'website']
+2026-02-11 23:15:43,082 - src.lead_manager - INFO - Processing 2 rows from CSV...
+2026-02-11 23:15:43,083 - src.lead_manager - INFO - Sample row 0: {'name': 'John Doe', 'email': 'yashnarula2020@gmail.com', 'company': 'Example Corp', 'website': 'https://example.com'}
+2026-02-11 23:15:43,091 - src.lead_manager - INFO - Import Result: 2 new leads added. 0 duplicates skipped. 0 invalid rows skipped.
+2026-02-11 23:22:06,475 - src.lead_manager - INFO - All leads cleared from the database.
+2026-02-11 23:24:55,047 - src.lead_manager - INFO - Detected encoding: ascii
+2026-02-11 23:24:55,054 - src.lead_manager - INFO - Successfully parsed CSV with separator: ','
+2026-02-11 23:24:55,054 - src.lead_manager - INFO - Columns detected: ['name', 'email', 'company', 'website']
+2026-02-11 23:24:55,054 - src.lead_manager - INFO - Processing 1 rows from CSV...
+2026-02-11 23:24:55,055 - src.lead_manager - INFO - Sample row 0: {'name': 'Lavanya Kaushik', 'email': 'Lavanyak182003@gmail.com', 'company': 'Lavanya Crystalz', 'website': 'https://example.com'}
+2026-02-11 23:24:55,065 - src.lead_manager - INFO - Import Result: 1 new leads added. 0 duplicates skipped. 0 invalid rows skipped.
+2026-02-11 23:27:44,888 - src.lead_manager - INFO - All leads cleared from the database.
+2026-02-11 23:27:49,322 - src.lead_manager - INFO - Detected encoding: ascii
+2026-02-11 23:27:49,324 - src.lead_manager - ERROR - Error importing CSV: 'ascii' codec can't decode byte 0xe2 in position 16274: ordinal not in range(128)
+2026-02-11 23:28:52,924 - src.lead_manager - INFO - Detected encoding: utf-8
+2026-02-11 23:28:52,927 - src.lead_manager - INFO - Successfully parsed CSV with separator: ','
+2026-02-11 23:28:52,928 - src.lead_manager - INFO - Columns detected: ['name', 'email', 'company', 'website']
+2026-02-11 23:28:52,928 - src.lead_manager - INFO - Processing 100 rows from CSV...
+2026-02-11 23:28:52,928 - src.lead_manager - INFO - Sample row 0: {'name': '230 Fifth Rooftop Bar', 'email': 'events@230-fifth.com', 'company': '230 Fifth Rooftop Bar', 'website': 'http://www.230-fifth.com/'}
+2026-02-11 23:28:53,006 - src.lead_manager - INFO - Import Result: 51 new leads added. 14 duplicates skipped. 35 invalid rows skipped.
+2026-02-11 23:34:07,125 - src.lead_manager - INFO - All leads cleared from the database.
+2026-02-11 23:48:45,670 - src.lead_manager - INFO - All leads cleared from the database.
+2026-02-11 23:50:17,685 - src.lead_manager - INFO - All leads cleared from the database.
+2026-02-11 23:52:43,770 - src.lead_manager - INFO - Reset 1 leads to pending.
+2026-02-11 23:54:29,775 - src.lead_manager - INFO - Reset 1 leads to pending.
+2026-02-12 00:15:32,808 - src.lead_manager - INFO - All leads cleared from the database.
